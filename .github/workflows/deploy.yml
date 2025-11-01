@@ -25,12 +25,9 @@ jobs:
       - name: Build project
         run: yarn build
 
-      - name: Deploy build to root
+      - name: Copy build files to root
         run: |
-          # Remove tudo exceto o .git e o dist
-          find . -maxdepth 1 ! -name '.' ! -name '.git' ! -name 'dist' -exec rm -rf {} +
-          # Move o conteúdo do dist para a raiz
-          mv dist/* .
+          cp -r dist/* .
           rm -rf dist
 
       - name: Commit and push build
