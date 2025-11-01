@@ -107,20 +107,37 @@ export default function Portfolio() {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
             {[
-              "Node.js",
-              "TypeScript",
-              "React",
-              "Express",
-              "NestJS",
-              "PostgreSQL",
-              "Docker",
-              "AWS",
-              "Clean Architecture",
-              "Domain-Driven Design",
+              { name: "Node.js", link: "https://nodejs.org/en/docs" },
+              {
+                name: "TypeScript",
+                link: "https://www.typescriptlang.org/docs/",
+              },
+              { name: "React", link: "https://react.dev/" },
+              {
+                name: "React Native",
+                link: "https://reactnative.dev/docs/getting-started",
+              },
+              { name: "Express", link: "https://expressjs.com/pt-br/" },
+              { name: "NestJS", link: "https://docs.nestjs.com/" },
+              { name: "PostgreSQL", link: "https://www.postgresql.org/docs/" },
+              { name: "Docker", link: "https://docs.docker.com/" },
+              { name: "AWS", link: "https://docs.aws.amazon.com/" },
+              { name: "Jest", link: "https://jestjs.io/docs/getting-started" },
+              {
+                name: "Clean Architecture",
+                link: "https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html",
+              },
+              {
+                name: "Domain-Driven Design",
+                link: "https://dddcommunity.org/learning-ddd/",
+              },
             ].map((skill) => (
-              <motion.div
-                key={skill}
-                className={`${
+              <motion.a
+                key={skill.name}
+                href={skill.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block ${
                   darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
                 } p-4 rounded-xl shadow hover:shadow-cyan-400/20 transition border ${
                   darkMode
@@ -129,8 +146,8 @@ export default function Portfolio() {
                 }`}
                 whileHover={{ scale: 1.05 }}
               >
-                {skill}
-              </motion.div>
+                {skill.name}
+              </motion.a>
             ))}
           </div>
         </section>
