@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Pega o código do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Configura Node.js e cache do Yarn
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "yarn"
+
+      # 3️⃣ Instala dependências
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      # 4️⃣ Build do projeto
+      - name: Build project
+        run: yarn build
+
+      # 5️⃣ Só publica se houver mudanças no build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v7
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          # cria uma branch "orphan" para não poluir histórico
+          force_orphan: true
+          # evita commits vazios
+          allow_empty_commit: false
