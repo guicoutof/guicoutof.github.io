@@ -1,4 +1,10 @@
-# guicoutof-portfolio (Vite + React + Tailwind)\n\nProjeto gerado automaticamente.\n\nInstalar e rodar:\n\n```
+# guicoutof-portfolio (Vite + React + Tailwind)
+
+## Projeto gerado automaticamente.
+
+### Instalar e rodar:
+
+```
 npm install
 npm run dev
 ```
