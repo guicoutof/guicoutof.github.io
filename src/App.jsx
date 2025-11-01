@@ -14,7 +14,6 @@ export default function Portfolio() {
       .catch(console.error);
   }, []);
 
-  //Teste
   return (
     <AnimatePresence mode="wait">
       <motion.div
