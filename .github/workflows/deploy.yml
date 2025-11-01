@@ -29,13 +29,11 @@ jobs:
       - name: Build project
         run: yarn build
 
-      # 5️⃣ Só publica se houver mudanças no build
+      # 5️⃣ Publica no GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v7
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # cria uma branch "orphan" para não poluir histórico
           force_orphan: true
-          # evita commits vazios
           allow_empty_commit: false

@@ -34,9 +34,7 @@ export default function Portfolio() {
             darkMode ? "border-gray-800" : "border-gray-300"
           }`}
         >
-          <h1 className="text-lg font-semibold">
-            Guilherme Couto Fernandes Teste
-          </h1>
+          <h1 className="text-lg font-semibold">Guilherme Couto Fernandes</h1>
           <button
             onClick={() => setDarkMode(!darkMode)}
             className={`p-2 rounded-lg transition ${
