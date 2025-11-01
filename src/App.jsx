@@ -119,6 +119,8 @@ export default function Portfolio() {
               },
               { name: "Express", link: "https://expressjs.com/pt-br/" },
               { name: "NestJS", link: "https://docs.nestjs.com/" },
+              { name: "Next.js", link: "https://nextjs.org/docs" },
+              { name: "Restful APIs", link: "https://restfulapi.net/" },
               { name: "PostgreSQL", link: "https://www.postgresql.org/docs/" },
               { name: "Docker", link: "https://docs.docker.com/" },
               { name: "AWS", link: "https://docs.aws.amazon.com/" },
